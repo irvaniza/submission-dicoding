@@ -45,6 +45,13 @@ nav li {
    display: inline;
    list-style-type: none;
    margin-right: 20px;
+
+}
+
+nav li a:hover,
+nav li a.hoverover {  
+  cursor: pointer;  
+  color:#fff;
 }
 
 nav a {
@@ -52,10 +59,6 @@ nav a {
    font-weight: 400;
    text-decoration: none;
    color: white;
-}
-
-nav a:hover {
-   font-weight: bold;
 }
 
 header {

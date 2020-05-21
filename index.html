@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/style.css">
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <header>
@@ -14,33 +15,21 @@
       </div>
       <nav>
        <ul>
-           <li><a href="#tentang">Tentang Saya</a></li>
-           <li><a href="#portofolio">Portofolio</a></li>
+           <li><a class="klik_menu" id="tentang">Tentang Saya</a></li>
+           <li><a class="klik_menu" id="portofolio">Portofolio</a></li>
        </ul>
       </nav>
     </header>
     <main>
        <div id="content" class="badan">
-       <article id="tentang" class="card">
-       <h2>Tentang Saya</h2>
-       <img src="assets/image/avatar.svg" class="avatar" alt="avatar">
-       <p align="justify">Perkenalkan nama saya Irvaniza Patria. Saya lulusan S1 informatika Universitas Syiah Kuala, Banda Aceh. Setelah lulus kuliah, saya bekerja di kantor akuntan publik di Kota Bekasi sebagai staff  IT. Hobi saya bermain rubik, mengetik cepat dan browsing info terbaru tentang dunia teknologi. Saya senang dengan  hal-hal baru dan mudah beradaptasi. </p>
- 
-       <p align="justify">Sewaktu Kuliah dulu, saya mengambil bidang minat Data Mining. Karena saya sangat tertarik dengan pengumpulan dan pengolahan data. Saya juga sangat senang mempelajari tentang pengembangan web.</p>
-       </article>
        
-       <article id="portofolio" class="card">
-       <h2>Portofolio</h2>
-       <img src="assets/image/smartchoose.png" class="image" alt="smartchoose">
-       <p align="justify">Aplikasi yang dibangun diberi nama "SmartChoose". Aplikasi ini merupakan aplikasi yang dibangun dengan Framework Laravel. Aplikasi ini akan membantu calon pembeli smartphone untuk membeli smartphone yang sesuai dengan kebutuhannya.</p>
-       </article>
-   </div>
+   		</div>
    <aside>
      <article class="card">
      <h2>Biodata</h2>
      <p><i class="fas fa-birthday-cake"> 10 Agustus 1996</i></p>
      <p><i class="fas fa-home"> Banda Aceh</i></p>
-     <p><i class="fas fa-envelope-square"> irvaniza.patria@gmail.com</i></p>
+     <p><i class="fas fa-envelope"> irvaniza.patria@gmail.com</i></p>
      </article>
     </aside>
    </main>
@@ -48,4 +37,21 @@
         Copyright &copy; Irvaniza Patria 2020
     </footer>
 </body>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.klik_menu').click(function(){
+      var menu = $(this).attr('id');
+      if(menu == "tentang"){
+        $('.badan').load('tentang.html');           
+      }else if (menu == "portofolio") {
+      	$('.badan').load('portofolio.html');
+      };
+    });
+ 
+ 
+    // halaman yang di load default pertama kali
+    $('.badan').load('tentang.html');           
+ 
+  });
+</script>
 </html>
